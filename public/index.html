@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="theme-color" content="#000000">
+	<!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+	<link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+	<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+	<!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+	<title>React App</title>
+</head>
+
+<body>
+  
+	<noscript>
+		You need to enable JavaScript to run this app.
+  </noscript>
+  
+<div id="root"></div>
+	<!--
+    	<div id="root"></div>
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+<!--
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js" ></script>    
+-->
+<script type="text/javascript" src="/browserfs.js"></script>
+<script type="text/javascript" src="/browserfs-module.js"></script>
+<script type="text/javascript" src="/runner.js"></script>
+
+
+<script type="text/javascript">
+
+/*
+  var fsBase = new BrowserFS.FileSystem.InMemory();
+  BrowserFS.initialize(fsBase);
+
+  var fs = BrowserFS.BFSRequire('fs');
+
+  fs.writeFileSync('/main.js', 'var accounting = require("accounting"); var md5 = require("sha256"); var money = accounting.formatMoney(12345678); console.log(md5("hjgjhgj")) ');
+  fs.mkdirSync('/node_modules');
+  fs.mkdirSync('/node_modules/convert-string');
+  fs.writeFileSync('/node_modules/convert-string/package.json', "{\"name\":\"convert-string\",\"version\":\"0.1.0\",\"description\":\"Convert to/from strings and array of bytes\",\"keywords\":[\"string\",\"strings\",\"convert\",\"hex\",\"bytes\"],\"devDependencies\":{\"chai\":\"~1.8.1\",\"mocha\":\"1.*\",\"terst\":\"0.0.1\"},\"repository\":{\"url\":\"https://github.com/cryptocoinjs/convert-string\",\"type\":\"git\"},\"main\":\"convert-string.js\"}");
+
+  Module = browserfsModule.Module;
+  var main = Module._load("/main");
+  
+  console.log(main);
+*/
+
+/*
+BrowserFS.FileSystem.LocalStorage.Create(function(e, lsfs) {
+
+  BrowserFS.FileSystem.InMemory.Create(function(e, inMemory) {
+
+    BrowserFS.FileSystem.IndexedDB.Create({}, function(e, idbfs) {
+
+      BrowserFS.FileSystem.MountableFileSystem.Create({
+        '/tmp': inMemory,
+        '/home': idbfs,
+        '/mnt/usb0': idbfs
+      }, function(e, mfs) {
+
+        BrowserFS.initialize(idbfs);
+        // BFS is now ready to use!
+
+        var fs = BrowserFS.BFSRequire('fs');
+
+
+                          
+        //  fs.mkdir('/node_modules', function(e,d){
+
+        //    fs.mkdir('/node_modules/test-app', function(e,d){
+
+        //   fs.writeFile('/node_modules/test-app/package.json', '{ "name": "test-app", "version": "1.0.0", "description": "", "keywords": [], "main": "./index.js" }', function(){
+
+        //     fs.writeFile('/node_modules/test-app/index.js', ' console.log("test appp"); ', function(){
+
+        //        fs.writeFile('/main.js', ' require("test-app") ', function(e,d){
+
+                // fs.mkdir('/node_modules/main', function(e,d){
+                
+                  fs.readFile('/main.js', function(e, d){
+
+                    fs.readFile('/node_modules/test-app/index.js', function(a, b) { 
+
+                      fs.readFile('/node_modules/test-app/package.json', function(w, i) { 
+
+                          //console.log('ddddd', i.toString())
+
+                          BrowserFS.initialize(inMemory);
+                          var fsss = BrowserFS.BFSRequire('fs');
+                          
+                        
+                          fsss.mkdirSync('/node_modules');
+                          fsss.mkdirSync('/node_modules/test-app');
+                  
+
+                          fsss.writeFileSync('/node_modules/test-app/package.json', i.toString());    
+                          fsss.writeFileSync('/node_modules/test-app/index.js', b.toString());                     
+
+                          fsss.writeFileSync('/main.js', d.toString());
+
+                          Module = browserfsModule.Module;                          
+                          var main = Module._load("/main");
+
+
+                  });
+                });
+
+
+  //         });
+
+  //       });
+  //      });
+  //    });
+  //   });
+  // });
+});
+  });
+
+  });
+});
+
+
+});
+
+    // var fsBase = new BrowserFS.FileSystem.IndexedDB(5000000);
+      
+    // BrowserFS.initialize(fsBase);
+    // var fs = BrowserFS.BFSRequire('fs');
+
+    // console.log(fs);
+    // fs.mkdir('/node_modules');
+
+    //fs.writeFileSync('/main.js', 'var md5 = require("md5"); console.log(md5("jdhgdjhgd")) ');
+
+    //fs.mkdirSync('/node_modules');
+    //fs.mkdirSync('/node_modules/testy');
+
+    // fs.mkdirSync('/node_modules/app.2.0');
+    // fs.mkdirSync('/node_modules/app.2.0/node_modules');
+
+    //fs.mkdirSync('/node_modules/app.2.0/node_modules/test-app');
+
+    
+    //fs.mkdirSync('/node_modules/exists');
+    //fs.mkdirSync('/node_modules/exists/lib');
+
+    //console.log(fs.readFileSync("//node_modules/md5/md5.js"))
+
+
+    // fs.writeFileSync('/node_modules/app.2.0/node_modules/test-app/package.json', '{ "name": "test-app", "version": "1.0.0", "description": "", "keywords": [], "main": "./index.js" }');
+
+    // fs.writeFileSync('/node_modules/app.2.0/node_modules/test-app/index.js', ' console.log("dd"); //var md5 = require("md5"); ');
+
+    //node_modules/node_modules/md5/md5.js
+
+
+    // fs.writeFileSync('/node_modules/app.1.0/node_modules/my-app/package.json', '{ "name": "my-app", "version": "1.0.0", "description": "", "keywords": [], "main": "./index.js" }');
+    // fs.writeFileSync('/node_modules/app.1.0/node_modules/my-app/index.js', 'console.log("My uuuApp");');
+
+
+//    console.log(fs)
+
+
+    axios.get('https://d1jyvh0kxilfa7.cloudfront.net/v1/combinations/md5@2.2.1.json')
+    //axios.get('https://d1jyvh0kxilfa7.cloudfront.net/v1/combinations/sha256@0.2.0.json')
+    .then(function (response) {  
+
+      var contents = response.data.contents;
+
+      //var contents = JSON.parse(contents.toString());      
+      var contentsKeys = Object.keys(contents);
+
+      contentsKeys.forEach(function(v,i){
+          
+          var folders = v.split('/');
+          var file = "/"+folders.pop();
+          var path = "";
+
+          folders.forEach((f,fi)=>{
+              if(f != ""){
+                path += "/" + f;
+                try{ 
+                  fs.mkdir(path);                
+                  // fs.mkdirSync('/node_modules/app.2.0/node_modules' + path);
+                }catch(err){
+                  //console.log('exists already');
+                }
+              }
+              //console.log(f);
+          });
+
+          //console.log(path + file)
+
+          //fs.writeFile(path + file, contents[v].content, (err)=>{} );
+
+          //console.log(path, file, contents[v].content);
+      })
+
+      // fs.writeFile('/app.2.2', JSON.stringify(data), (err)=>{});
+
+      //fs.writeFile('/package.json', '{ "name": "main", "version": "1.0.0", "description": "", "keywords": [], "main": "./main.js" }');
+
+      //console.log(fs);
+      
+      // fs.mkdir('/node_modules', function(e,d){
+      //     console.log('LLLLLL', e,d)
+      // });
+
+      // fs.writeFile('/node_modules/main/package.json', '{ "name": "test-app", "version": "1.0.0", "description": "", "keywords": [], "main": "./index.js" }');
+      // fs.writeFile('/node_modules/main/index.js', 'console.log("popopopo"); //var md5 = require("md5"); //console.log(md5("jdhgdjhgd")); ');
+
+
+      // setTimeout(function(){
+      //       // fs.readdir("/", function(err, data){
+      //       //   console.log(data, err)
+      //       // })
+
+      //   Module = browserfsModule.Module;    
+
+      //   //console.log(Module)
+
+      //   var main = Module._load("/node_modules/main");
+
+      // }, 2000)
+
+      // fs.readFile("/node_modules/main.js", function(err, data){
+      //     console.log(data, err)
+      // })
+      //   setTimeout(function(){
+      //       fs.readdir("/", function(err, data){
+      //         console.log(data, err)
+      //       })
+
+
+      //   // Module = browserfsModule.Module;    
+      //   // //console.log(Module)
+      //   // var main = Module._load("/main.js");
+
+      // }, 2000)
+
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    
+    // console.log(fs)
+
+    // fs.writeFileSync('/main.js', 'var md5 = require("md5"); console.log(md5("jdhgdjhgd")) ');
+    // Module = browserfsModule.Module;
+    // var main = Module._load("/main");
+
+    //console.log(BrowserFS);
+
+
+    // fs.readFile('/app.2.2', (err, contents)=> {
+    //   var contents = JSON.parse(contents.toString());
+    //   console.log(contents);
+    // });
+
+    //fs.writeFileSync('/main.js', 'console.log("Hello worlds foolsllss") ');
+  
+  // fs.writeFile('/start.js', '[{ name: "eddie" }]', (err)=>{
+  // });
+    
+
+  // fs.writeFileSync('/main.js', 'var accounting = require("accounting"); var md5 = require("sha256"); var money = accounting.formatMoney(12345678); console.log(md5("hjgjhgj")) ');
+
+  /*
+  fs.readFile('/app.2.1', (err, contents)=> {
+
+    var contents = JSON.parse(contents.toString());
+    var contentsKeys = Object.keys(contents);
+
+    contentsKeys.forEach(function(v,i){
+
+      console.log(v.split('/'))    
+      
+      // fs.mkdirSync('/node_modules');
+      // fs.mkdirSync('/node_modules/convert-string');
+      // fs.writeFileSync('/node_modules/convert-string/package.json', "{\"name\":\"convert-string\",\"version\":\"0.1.0\",\"description\":\"Convert to/from strings and array of bytes\",\"keywords\":[\"string\",\"strings\",\"convert\",\"hex\",\"bytes\"],\"devDependencies\":{\"chai\":\"~1.8.1\",\"mocha\":\"1.*\",\"terst\":\"0.0.1\"},\"repository\":{\"url\":\"https://github.com/cryptocoinjs/convert-string\",\"type\":\"git\"},\"main\":\"convert-string.js\"}");
+
+      
+    });
+
+
+    // for(var i = 0; v<contentsKeys.length; i++){
+    //   console.log(contents[i])      
+    // }
+    //console.log(contentsKeys)
+    // var j = eval(i);
+    //console.log('swetetete', i );
+
+  });
+
+  */
+
+
+  // Module = browserfsModule.Module;
+  // var main = Module._load("/main");
+  
+  // console.log(main);
+
+
+  // fs.writeFile('/run.js',   
+  //   "var fs = require(\"fs\"); fs.readFile(\"/accounting.js\", (err, contents)=> { eval(contents.toString()); console.log(accounting.formatMoney(12345678)); });"
+  // , (err)=>{
+  // });
+     
+  // fs.readFile('/run.js', (err, contents)=> {
+  //   var i = contents.toString();
+  //   console.log(i);
+
+  //   //eval(i);
+  // });
+
+
+  // fs.writeFile('/accounting.js',   
+  //   "/*!\n * accounting.js v0.4.1\n * Copyright 2014 Open Exchange Rates\n *\n * Freely distributable under the MIT license.\n * Portions of accounting.js are inspired or borrowed from underscore.js\n *\n * Full details and documentation:\n * http://openexchangerates.github.io/accounting.js/\n */\n\n(function(root, undefined) {\n\n\t/* --- Setup --- */\n\n\t// Create the local library object, to be exported or referenced globally later\n\tvar lib = {};\n\n\t// Current version\n\tlib.version = '0.4.1';\n\n\n\t/* --- Exposed settings --- */\n\n\t// The library's settings configuration object. Contains default parameters for\n\t// currency and number formatting\n\tlib.settings = {\n\t\tcurrency: {\n\t\t\tsymbol : \"$\",\t\t// default currency symbol is '$'\n\t\t\tformat : \"%s%v\",\t// controls output: %s = symbol, %v = value (can be object, see docs)\n\t\t\tdecimal : \".\",\t\t// decimal point separator\n\t\t\tthousand : \",\",\t\t// thousands separator\n\t\t\tprecision : 2,\t\t// decimal places\n\t\t\tgrouping : 3\t\t// digit grouping (not implemented yet)\n\t\t},\n\t\tnumber: {\n\t\t\tprecision : 0,\t\t// default precision on numbers is 0\n\t\t\tgrouping : 3,\t\t// digit grouping (not implemented yet)\n\t\t\tthousand : \",\",\n\t\t\tdecimal : \".\"\n\t\t}\n\t};\n\n\n\t/* --- Internal Helper Methods --- */\n\n\t// Store reference to possibly-available ECMAScript 5 methods for later\n\tvar nativeMap = Array.prototype.map,\n\t\tnativeIsArray = Array.isArray,\n\t\ttoString = Object.prototype.toString;\n\n\t/**\n\t * Tests whether supplied parameter is a string\n\t * from underscore.js\n\t */\n\tfunction isString(obj) {\n\t\treturn !!(obj === '' || (obj && obj.charCodeAt && obj.substr));\n\t}\n\n\t/**\n\t * Tests whether supplied parameter is a string\n\t * from underscore.js, delegates to ECMA5's native Array.isArray\n\t */\n\tfunction isArray(obj) {\n\t\treturn nativeIsArray ? nativeIsArray(obj) : toString.call(obj) === '[object Array]';\n\t}\n\n\t/**\n\t * Tests whether supplied parameter is a true object\n\t */\n\tfunction isObject(obj) {\n\t\treturn obj && toString.call(obj) === '[object Object]';\n\t}\n\n\t/**\n\t * Extends an object with a defaults object, similar to underscore's _.defaults\n\t *\n\t * Used for abstracting parameter handling from API methods\n\t */\n\tfunction defaults(object, defs) {\n\t\tvar key;\n\t\tobject = object || {};\n\t\tdefs = defs || {};\n\t\t// Iterate over object non-prototype properties:\n\t\tfor (key in defs) {\n\t\t\tif (defs.hasOwnProperty(key)) {\n\t\t\t\t// Replace values with defaults only if undefined (allow empty/zero values):\n\t\t\t\tif (object[key] == null) object[key] = defs[key];\n\t\t\t}\n\t\t}\n\t\treturn object;\n\t}\n\n\t/**\n\t * Implementation of `Array.map()` for iteration loops\n\t *\n\t * Returns a new Array as a result of calling `iterator` on each array value.\n\t * Defers to native Array.map if available\n\t */\n\tfunction map(obj, iterator, context) {\n\t\tvar results = [], i, j;\n\n\t\tif (!obj) return results;\n\n\t\t// Use native .map method if it exists:\n\t\tif (nativeMap && obj.map === nativeMap) return obj.map(iterator, context);\n\n\t\t// Fallback for native .map:\n\t\tfor (i = 0, j = obj.length; i < j; i++ ) {\n\t\t\tresults[i] = iterator.call(context, obj[i], i, obj);\n\t\t}\n\t\treturn results;\n\t}\n\n\t/**\n\t * Check and normalise the value of precision (must be positive integer)\n\t */\n\tfunction checkPrecision(val, base) {\n\t\tval = Math.round(Math.abs(val));\n\t\treturn isNaN(val)? base : val;\n\t}\n\n\n\t/**\n\t * Parses a format string or object and returns format obj for use in rendering\n\t *\n\t * `format` is either a string with the default (positive) format, or object\n\t * containing `pos` (required), `neg` and `zero` values (or a function returning\n\t * either a string or object)\n\t *\n\t * Either string or format.pos must contain \"%v\" (value) to be valid\n\t */\n\tfunction checkCurrencyFormat(format) {\n\t\tvar defaults = lib.settings.currency.format;\n\n\t\t// Allow function as format parameter (should return string or object):\n\t\tif ( typeof format === \"function\" ) format = format();\n\n\t\t// Format can be a string, in which case `value` (\"%v\") must be present:\n\t\tif ( isString( format ) && format.match(\"%v\") ) {\n\n\t\t\t// Create and return positive, negative and zero formats:\n\t\t\treturn {\n\t\t\t\tpos : format,\n\t\t\t\tneg : format.replace(\"-\", \"\").replace(\"%v\", \"-%v\"),\n\t\t\t\tzero : format\n\t\t\t};\n\n\t\t// If no format, or object is missing valid positive value, use defaults:\n\t\t} else if ( !format || !format.pos || !format.pos.match(\"%v\") ) {\n\n\t\t\t// If defaults is a string, casts it to an object for faster checking next time:\n\t\t\treturn ( !isString( defaults ) ) ? defaults : lib.settings.currency.format = {\n\t\t\t\tpos : defaults,\n\t\t\t\tneg : defaults.replace(\"%v\", \"-%v\"),\n\t\t\t\tzero : defaults\n\t\t\t};\n\n\t\t}\n\t\t// Otherwise, assume format was fine:\n\t\treturn format;\n\t}\n\n\n\t/* --- API Methods --- */\n\n\t/**\n\t * Takes a string/array of strings, removes all formatting/cruft and returns the raw float value\n\t * Alias: `accounting.parse(string)`\n\t *\n\t * Decimal must be included in the regular expression to match floats (defaults to\n\t * accounting.settings.number.decimal), so if the number uses a non-standard decimal \n\t * separator, provide it as the second argument.\n\t *\n\t * Also matches bracketed negatives (eg. \"$ (1.99)\" => -1.99)\n\t *\n\t * Doesn't throw any errors (`NaN`s become 0) but this may change in future\n\t */\n\tvar unformat = lib.unformat = lib.parse = function(value, decimal) {\n\t\t// Recursively unformat arrays:\n\t\tif (isArray(value)) {\n\t\t\treturn map(value, function(val) {\n\t\t\t\treturn unformat(val, decimal);\n\t\t\t});\n\t\t}\n\n\t\t// Fails silently (need decent errors):\n\t\tvalue = value || 0;\n\n\t\t// Return the value as-is if it's already a number:\n\t\tif (typeof value === \"number\") return value;\n\n\t\t// Default decimal point comes from settings, but could be set to eg. \",\" in opts:\n\t\tdecimal = decimal || lib.settings.number.decimal;\n\n\t\t // Build regex to strip out everything except digits, decimal point and minus sign:\n\t\tvar regex = new RegExp(\"[^0-9-\" + decimal + \"]\", [\"g\"]),\n\t\t\tunformatted = parseFloat(\n\t\t\t\t(\"\" + value)\n\t\t\t\t.replace(/\\((.*)\\)/, \"-$1\") // replace bracketed values with negatives\n\t\t\t\t.replace(regex, '')         // strip out any cruft\n\t\t\t\t.replace(decimal, '.')      // make sure decimal point is standard\n\t\t\t);\n\n\t\t// This will fail silently which may cause trouble, let's wait and see:\n\t\treturn !isNaN(unformatted) ? unformatted : 0;\n\t};\n\n\n\t/**\n\t * Implementation of toFixed() that treats floats more like decimals\n\t *\n\t * Fixes binary rounding issues (eg. (0.615).toFixed(2) === \"0.61\") that present\n\t * problems for accounting- and finance-related software.\n\t */\n\tvar toFixed = lib.toFixed = function(value, precision) {\n\t\tprecision = checkPrecision(precision, lib.settings.number.precision);\n\t\tvar power = Math.pow(10, precision);\n\n\t\t// Multiply up by precision, round accurately, then divide and use native toFixed():\n\t\treturn (Math.round(lib.unformat(value) * power) / power).toFixed(precision);\n\t};\n\n\n\t/**\n\t * Format a number, with comma-separated thousands and custom precision/decimal places\n\t * Alias: `accounting.format()`\n\t *\n\t * Localise by overriding the precision and thousand / decimal separators\n\t * 2nd parameter `precision` can be an object matching `settings.number`\n\t */\n\tvar formatNumber = lib.formatNumber = lib.format = function(number, precision, thousand, decimal) {\n\t\t// Resursively format arrays:\n\t\tif (isArray(number)) {\n\t\t\treturn map(number, function(val) {\n\t\t\t\treturn formatNumber(val, precision, thousand, decimal);\n\t\t\t});\n\t\t}\n\n\t\t// Clean up number:\n\t\tnumber = unformat(number);\n\n\t\t// Build options object from second param (if object) or all params, extending defaults:\n\t\tvar opts = defaults(\n\t\t\t\t(isObject(precision) ? precision : {\n\t\t\t\t\tprecision : precision,\n\t\t\t\t\tthousand : thousand,\n\t\t\t\t\tdecimal : decimal\n\t\t\t\t}),\n\t\t\t\tlib.settings.number\n\t\t\t),\n\n\t\t\t// Clean up precision\n\t\t\tusePrecision = checkPrecision(opts.precision),\n\n\t\t\t// Do some calc:\n\t\t\tnegative = number < 0 ? \"-\" : \"\",\n\t\t\tbase = parseInt(toFixed(Math.abs(number || 0), usePrecision), 10) + \"\",\n\t\t\tmod = base.length > 3 ? base.length % 3 : 0;\n\n\t\t// Format the number:\n\t\treturn negative + (mod ? base.substr(0, mod) + opts.thousand : \"\") + base.substr(mod).replace(/(\\d{3})(?=\\d)/g, \"$1\" + opts.thousand) + (usePrecision ? opts.decimal + toFixed(Math.abs(number), usePrecision).split('.')[1] : \"\");\n\t};\n\n\n\t/**\n\t * Format a number into currency\n\t *\n\t * Usage: accounting.formatMoney(number, symbol, precision, thousandsSep, decimalSep, format)\n\t * defaults: (0, \"$\", 2, \",\", \".\", \"%s%v\")\n\t *\n\t * Localise by overriding the symbol, precision, thousand / decimal separators and format\n\t * Second param can be an object matching `settings.currency` which is the easiest way.\n\t *\n\t * To do: tidy up the parameters\n\t */\n\tvar formatMoney = lib.formatMoney = function(number, symbol, precision, thousand, decimal, format) {\n\t\t// Resursively format arrays:\n\t\tif (isArray(number)) {\n\t\t\treturn map(number, function(val){\n\t\t\t\treturn formatMoney(val, symbol, precision, thousand, decimal, format);\n\t\t\t});\n\t\t}\n\n\t\t// Clean up number:\n\t\tnumber = unformat(number);\n\n\t\t// Build options object from second param (if object) or all params, extending defaults:\n\t\tvar opts = defaults(\n\t\t\t\t(isObject(symbol) ? symbol : {\n\t\t\t\t\tsymbol : symbol,\n\t\t\t\t\tprecision : precision,\n\t\t\t\t\tthousand : thousand,\n\t\t\t\t\tdecimal : decimal,\n\t\t\t\t\tformat : format\n\t\t\t\t}),\n\t\t\t\tlib.settings.currency\n\t\t\t),\n\n\t\t\t// Check format (returns object with pos, neg and zero):\n\t\t\tformats = checkCurrencyFormat(opts.format),\n\n\t\t\t// Choose which format to use for this value:\n\t\t\tuseFormat = number > 0 ? formats.pos : number < 0 ? formats.neg : formats.zero;\n\n\t\t// Return with currency symbol added:\n\t\treturn useFormat.replace('%s', opts.symbol).replace('%v', formatNumber(Math.abs(number), checkPrecision(opts.precision), opts.thousand, opts.decimal));\n\t};\n\n\n\t/**\n\t * Format a list of numbers into an accounting column, padding with whitespace\n\t * to line up currency symbols, thousand separators and decimals places\n\t *\n\t * List should be an array of numbers\n\t * Second parameter can be an object containing keys that match the params\n\t *\n\t * Returns array of accouting-formatted number strings of same length\n\t *\n\t * NB: `white-space:pre` CSS rule is required on the list container to prevent\n\t * browsers from collapsing the whitespace in the output strings.\n\t */\n\tlib.formatColumn = function(list, symbol, precision, thousand, decimal, format) {\n\t\tif (!list) return [];\n\n\t\t// Build options object from second param (if object) or all params, extending defaults:\n\t\tvar opts = defaults(\n\t\t\t\t(isObject(symbol) ? symbol : {\n\t\t\t\t\tsymbol : symbol,\n\t\t\t\t\tprecision : precision,\n\t\t\t\t\tthousand : thousand,\n\t\t\t\t\tdecimal : decimal,\n\t\t\t\t\tformat : format\n\t\t\t\t}),\n\t\t\t\tlib.settings.currency\n\t\t\t),\n\n\t\t\t// Check format (returns object with pos, neg and zero), only need pos for now:\n\t\t\tformats = checkCurrencyFormat(opts.format),\n\n\t\t\t// Whether to pad at start of string or after currency symbol:\n\t\t\tpadAfterSymbol = formats.pos.indexOf(\"%s\") < formats.pos.indexOf(\"%v\") ? true : false,\n\n\t\t\t// Store value for the length of the longest string in the column:\n\t\t\tmaxLength = 0,\n\n\t\t\t// Format the list according to options, store the length of the longest string:\n\t\t\tformatted = map(list, function(val, i) {\n\t\t\t\tif (isArray(val)) {\n\t\t\t\t\t// Recursively format columns if list is a multi-dimensional array:\n\t\t\t\t\treturn lib.formatColumn(val, opts);\n\t\t\t\t} else {\n\t\t\t\t\t// Clean up the value\n\t\t\t\t\tval = unformat(val);\n\n\t\t\t\t\t// Choose which format to use for this value (pos, neg or zero):\n\t\t\t\t\tvar useFormat = val > 0 ? formats.pos : val < 0 ? formats.neg : formats.zero,\n\n\t\t\t\t\t\t// Format this value, push into formatted list and save the length:\n\t\t\t\t\t\tfVal = useFormat.replace('%s', opts.symbol).replace('%v', formatNumber(Math.abs(val), checkPrecision(opts.precision), opts.thousand, opts.decimal));\n\n\t\t\t\t\tif (fVal.length > maxLength) maxLength = fVal.length;\n\t\t\t\t\treturn fVal;\n\t\t\t\t}\n\t\t\t});\n\n\t\t// Pad each number in the list and send back the column of numbers:\n\t\treturn map(formatted, function(val, i) {\n\t\t\t// Only if this is a string (not a nested array, which would have already been padded):\n\t\t\tif (isString(val) && val.length < maxLength) {\n\t\t\t\t// Depending on symbol position, pad after symbol or at index 0:\n\t\t\t\treturn padAfterSymbol ? val.replace(opts.symbol, opts.symbol+(new Array(maxLength - val.length + 1).join(\" \"))) : (new Array(maxLength - val.length + 1).join(\" \")) + val;\n\t\t\t}\n\t\t\treturn val;\n\t\t});\n\t};\n\n\n\t/* --- Module Definition --- */\n\n\t// Export accounting for CommonJS. If being loaded as an AMD module, define it as such.\n\t// Otherwise, just add `accounting` to the global object\n\tif (typeof exports !== 'undefined') {\n\t\tif (typeof module !== 'undefined' && module.exports) {\n\t\t\texports = module.exports = lib;\n\t\t}\n\t\texports.accounting = lib;\n\t} else if (typeof define === 'function' && define.amd) {\n\t\t// Return the library as an AMD module:\n\t\tdefine([], function() {\n\t\t\treturn lib;\n\t\t});\n\t} else {\n\t\t// Use accounting.noConflict to restore `accounting` back to its original value.\n\t\t// Returns a reference to the library's `accounting` object;\n\t\t// e.g. `var numbers = accounting.noConflict();`\n\t\tlib.noConflict = (function(oldAccounting) {\n\t\t\treturn function() {\n\t\t\t\t// Reset the value of the root's `accounting` variable:\n\t\t\t\troot.accounting = oldAccounting;\n\t\t\t\t// Delete the noConflict method:\n\t\t\t\tlib.noConflict = undefined;\n\t\t\t\t// Return reference to the library to re-assign it:\n\t\t\t\treturn lib;\n\t\t\t};\n\t\t})(root.accounting);\n\n\t\t// Declare `fx` on the root (global/window) object:\n\t\troot['accounting'] = lib;\n\t}\n\n\t// Root will be `window` in browser or `global` on the server:\n}(this));\n"
+  //   , (err)=>{
+  // });
+
+
+      // fs.readFile('/accounting.js', (err, contents)=> {
+      //   console.log(contents.toString(), err);
+      // });
+      
+
+</script>
+
+
+<script>
+ 
+    </script>
+
+</body>
+
+</html>
